@@ -1,0 +1,59 @@
+<manifest package="br.com.carlosrafaelgn.fplay.plugin.wirelessvisualizer"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          android:installLocation="auto"
+          android:versionCode="2"
+          android:versionName="1.01">
+
+    <!-- http://developer.android.com/guide/topics/manifest/supports-screens-element.html -->
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true"/>
+
+    <!--
+    Support for devices without touch and TVs
+    as described in http://developer.android.com/guide/topics/manifest/uses-feature-element.html
+    -->
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.faketouch"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false"/>
+
+    <application
+        android:allowBackup="true"
+        android:allowClearUserData="true"
+        android:banner="@mipmap/ic_launcher"
+        android:description="@string/app_name"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:killAfterRestore="true"
+        android:label="@string/app_name"
+        android:restoreAnyVersion="false"
+        android:supportsRtl="true">
+
+        <activity
+            android:name="br.com.carlosrafaelgn.fplay.plugin.wirelessvisualizer.ActivityMain"
+            android:clearTaskOnLaunch="true"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:multiprocess="false"
+            android:screenOrientation="unspecified"
+            android:stateNotNeeded="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

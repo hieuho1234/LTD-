@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout
+    android:id="@+id/panelInfo"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:splitMotionEvents="false"
+    tools:context=".ActivityHost">
+
+    <LinearLayout
+        android:id="@+id/panelTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:orientation="vertical">
+
+        <include layout="@layout/activity_main_top_title"/>
+
+    </LinearLayout>
+
+    <br.com.carlosrafaelgn.fplay.ui.BgListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/panelTop"
+        android:layout_below="@+id/panelTitle"
+        android:nextFocusForward="@+id/btnAdd">
+
+        <!--
+            When this tag is present, and the device is being
+            controlled by a mouse, the control gains the focus
+            and only loses it when a keyboard key is pressed!
+        -->
+        <!--<requestFocus/>-->
+    </br.com.carlosrafaelgn.fplay.ui.BgListView>
+
+    <LinearLayout
+        android:id="@+id/panelTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:baselineAligned="false"
+        android:orientation="vertical"
+        android:splitMotionEvents="false">
+
+        <include layout="@layout/activity_main_top_controls"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
